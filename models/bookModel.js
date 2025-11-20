@@ -9,7 +9,7 @@ const bookSchema = new mongoose.Schema({
         required:true
     },
     noOfPages:{
-        type:String,
+        type:Number,
         required:true
     },
     imageUrl:{
@@ -20,7 +20,7 @@ const bookSchema = new mongoose.Schema({
         type:Number,
         reguired:true
     },
-    discountPrices:{
+    discountPrice:{
         type:Number,
         required:true
     },
@@ -44,13 +44,13 @@ const bookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    uploadImage:{
+    uploadImg:{
         type:String,
         required:true
     },
     status:{
         type:String,
-        required:true
+        required:'Pending'
     },
     usermail:{
         type:String,

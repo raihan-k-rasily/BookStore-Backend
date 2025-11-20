@@ -7,6 +7,7 @@ const db = require('./config/db')
 // 7 import cors
 const cors = require('cors')
 
+
 // 8 import routes
 const router = require('./router/route')
 
@@ -21,11 +22,14 @@ bookstoreServer.use(cors());
 // 10 use join middleware
 bookstoreServer.use(express.json())
 
-// 12 implementing middleware
+// 13 implementing middleware
 // bookstoreServer.use(appMiddleware)
 
 // 11 use routes
 bookstoreServer.use(router)
+
+// 12 use uploads for multer
+bookstoreServer.use('/uploads',express.static('./uploads'))
 
 
 // 3 port define
