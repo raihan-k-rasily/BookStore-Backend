@@ -5,20 +5,23 @@ const storage = multer.diskStorage({
         cb(null,'./uploads')
     },
     filename:(req,file,cb)=>{
-        const date= new Date().toDateString()
+        const date = new Date().toDateString()
         cb(null,`IMG-${file.originalname}-${date}`)
     }
 })
-const filefilter =(req,file,cb)=>{
+
+const fileFilter=(req,file,cb)=>{
     if(file.mimetype=='image/png' || file.mimetype=='image/jpg' || file.mimetype=='image/jpeg'){
         cb(null,true)
     }else{
         cb(null,false)
     }
 }
-const multerConfig = multer({
-    storage,
-    filefilter
-})
 
-module.exports = multerConfig
+const multerConfig=multer({
+     storage,
+    fileFilter
+})
+   
+
+module.exports=multerConfig
