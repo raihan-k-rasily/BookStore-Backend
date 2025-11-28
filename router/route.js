@@ -23,7 +23,15 @@ router.post('/api/login',userController.loginUser)
 //Googlelogin user
 router.post('/api/google-login',userController.googleAuth)
 
+//get book
+router.get('/api/getBook',jwtmiddleware,bookController.getBook)
+
+//get homebook
+router.get('/api/homeBooks',bookController.getHomeBooks)
+
+
 //jwtmiddleware
+// add book
 router.post('/api/addBook',jwtmiddleware,multerMiddleware.array('uploadImage',3),bookController.addBook)
 
 //5 export router
