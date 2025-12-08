@@ -98,3 +98,10 @@ exports.getUser = async (req, res) => {
     res.status(500).json(error);
   }
 };
+
+// update User
+exports.updateAdmin=async(req,res)=>{
+    console.log(req.body);
+    res.json("Request Recieved")
+    
+}

@@ -49,5 +49,14 @@ router.get('/api/getUser',adminJwtMiddleware,userController.getUser)
 // add jobs
 router.post('/api/admin/addJob',adminJwtMiddleware,jobController.addJob)
 
+//get user
+router.get('/api/admin/getJob',adminJwtMiddleware,userController.getUser)
+
+// delete job
+router.delete('/api/admin/deleteJob/:id',adminJwtMiddleware,jobController.deleteJob)
+
+// update Admin
+router.put('api/admin/updateAdmin',adminJwtMiddleware,userController.updateAdmin)
+
 //5 export router
 module.exports = router

@@ -1,7 +1,7 @@
 const jobs =require('../models/jobModel')
 
 exports.addJob = async (req, res) => { 
-    console.log("Inside Add Book"); 
+    console.log("Inside Add Job"); 
     const {jobTitle,location,jobType,salary,qualification,experience,description} = req.body
    
    
@@ -26,6 +26,25 @@ exports.addJob = async (req, res) => {
         }
     }catch(err){
         res.status(500).json(err)
+    }
+    
+}
+
+
+
+exports.deleteJob=async(req,res)=>{
+    console.log(req.params);
+
+    const {id} = req.params
+
+    try{
+        const deletedJob = await Jobs.findByIdAndDelete({_id:id})
+        console.log(deletedJob);
+
+        res.status(200).json({message:"Job Deleted",deletedJob})
+        
+    }catch(err){
+        res.status(500).json("Err"+err)
     }
     
 }
