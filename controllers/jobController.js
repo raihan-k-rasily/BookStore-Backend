@@ -30,6 +30,15 @@ exports.addJob = async (req, res) => {
     
 }
 
+exports.getJobs = async(req,res)=>{
+    try {
+        const allJobs = await Jobs.find()
+        res.status(200).json(allJobs)
+    } catch (error) {
+        res.status(500).json("err"+error)
+    }
+}
+
 
 
 exports.deleteJob=async(req,res)=>{

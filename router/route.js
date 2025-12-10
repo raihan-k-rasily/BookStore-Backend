@@ -52,6 +52,11 @@ router.post('/api/admin/addJob',adminJwtMiddleware,jobController.addJob)
 //get user
 router.get('/api/admin/getJob',adminJwtMiddleware,userController.getUser)
 
+//get all jobs
+router.get('/api/admin/allJobs',adminJwtMiddleware,jobController.getJobs)
+
+
+
 // delete job
 router.delete('/api/admin/deleteJob/:id',adminJwtMiddleware,jobController.deleteJob)
 
